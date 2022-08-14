@@ -1,0 +1,17 @@
+Attention, ndless est requis pour ce jeu !
+
+The Last Mission est un remake du même nom sorti a l'origine
+pour MS-DOS, MSX2 et ZX Spectrum et developpé par OperaSoft.
+Le remake a été reprogrammé par Dmitry Smagin et Pedro Ruiz d'Operasoft
+en a autorisé sa distribution sous la GPLv2.
+
+Le jeu se présente comme un jeu de coté typé arcade où vous vous deplacez
+dans des grandes maps.
+Vous controllez un robot ressemblant a un tank composé de deux parties :
+La tête (le canon) et le corps. (le tank)
+Vous pouvez deplacer la tête en l'air comme bon vous semble 
+et vous separer de votre corps mais attention : 
+La tête peut voler sans le tank que pendant une certaine limite de temps.
+
+Pour jouer au jeu, mettez les deux fichiers tns dans le même dossier.
+Pour lancer le jeu, lancer le fichier lastmission.tns.

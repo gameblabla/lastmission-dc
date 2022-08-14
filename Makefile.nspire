@@ -1,0 +1,34 @@
+
+APP_NAME = last-mission.elf
+
+# compiler
+
+CC = nspire-gcc
+LD = nspire-ld
+CFLAGS = -Ofast -D__DINGUX__ -DNSPIRE -DLOW_CPU -DCURRENT_PATH -DUNLIMITED -marm -mcpu=arm926ej-s -std=c99
+LFLAGS = -Wl,--as-needed -lSDL -lm
+
+# source files
+
+OBJ =	m_data.o
+OBJ +=	demo.o enemies.o engine.o input.o main.o random.o room.o \
+	sound.o sprites.o video.o world.o
+
+all : $(APP_NAME) gzn
+
+gzn:
+	genzehn --input ./$(APP_NAME) --output ./lm.tns --name "lastmission" --compress
+	make-prg ./lm.tns ./lm.prg.tns
+	mv lm.prg.tns lastmission.tns
+	rm lm.tns
+	rm $(APP_NAME)
+
+$(APP_NAME) : $(OBJ)
+	$(CC) $^ $(LFLAGS) -o $@
+
+%.o : %.c
+	$(CC) -c $(CFLAGS) $< -o $@
+
+clean :
+	rm -rf ./*.o $(APP_NAME)
+	
